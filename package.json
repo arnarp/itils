@@ -3,9 +3,35 @@
   "version": "0.1.0",
   "description": "Typescript utilties",
   "homepage": "https://github.com/arnarp/itils",
+  "repository": {
+    "type": "git",
+    "url": "github.com/arnarp/itils"
+  },
+  "files": [
+    "dist"
+  ],
+  "main": "dist/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rm -rf dist && tsc",
+    "version:major": "npm version major && git push --follow-tags",
+    "version:minor": "npm version minor && git push --follow-tags",
+    "version:patch": "npm version patch && git push --follow-tags"
   },
   "author": "Arnar Birgisson",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^3.4.2",
+    "tslib": "^1.9.3"
+  },
+  "peerDependencies": {
+    "tslib": "^1.9.3"
+  },
+  "importSort": {
+    ".ts, .tsx": {
+      "parser": "typescript",
+      "style": "module",
+      "options": {}
+    }
+  }
 }
